@@ -10,37 +10,6 @@ coinlist = ["quarters","dimes","nickels","pennies"]
 dollarlist = ["twenties","tens", "fives","ones"]
 dollardict = {"twenties":20,"tens":10,"fives":5,"ones":1}
 
-
-#old attempt at minimizing coins, using too many loops etc.
-def oldminimizecoins(remainder):
-    changetotal = remainder
-    remainder = 100 * remainder
-    quarters = 0
-    dimes = 0
-    nickels = 0
-    pennies = 0
-    while remainder > 0:
-        if remainder > 100:
-            break
-        elif remainder > 25:
-            quarters = int(remainder // 25)
-            remainder = remainder % 25
-            print(remainder)
-        elif remainder > 10:
-            dimes = int(remainder // 10)
-            remainder = remainder % 10
-            print(remainder)
-        elif remainder > 5:
-            nickels = int(remainder // 5)
-            remainder = remainder % 5
-            print(remainder)
-        else:
-            pennies = int(remainder // 1)
-            remainder = 0
-            print(remainder)
-    return("Coins totaling:",changetotal, quarters, " quarters, ", dimes, " dimes," , nickels, " nickels, " , pennies, " pennies." )
-
-
 #Minimizes coins, returns list of # of coins given in change if given an original valid number
 #Can compute with values > $1.00 but not supposed to.
 def minimizecoins(cents):
